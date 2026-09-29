@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Company // Quantum Neural Matrix v6.0</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js Engine for Realtime 3D Graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Cyber HUD Overlay & Reticle -->
+    <div class="hud-overlay">
+        <div class="hud-corner top-left">SYS.VER // 6.0.4<br>GRID: ACTIVE</div>
+        <div class="hud-corner top-right">FPS: <span id="fpsMeter">60</span><br>LATENCY: 0.04ms</div>
+        <div class="hud-corner bottom-left">SECURE NODE // ZERO-TRUST</div>
+        <div class="hud-corner bottom-right">AUDIO: SYNTH_ON</div>
+        <div class="target-reticle"></div>
+    </div>
+
+    <!-- Custom Multi-Layer Sci-Fi Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="cursor-laser"></div>
+
+    <!-- Multi-Layer WebGL 3D Engine Surface -->
+    <div id="webgl-container"></div>
+    <div class="grid-floor"></div>
+
+    <!-- Advanced Cyberpunk Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Robotics Company Logo" class="logo-img">
+            <span class="logo-text">ROBOTICS<span class="highlight">_COMPANY</span></span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home" class="nav-item active" data-tab="home">
+                <span class="nav-code">01//</span>
+                <span class="nav-text">HOME</span>
+            </a>
+            <a href="#pages" class="nav-item" data-tab="pages">
+                <span class="nav-code">02//</span>
+                <span class="nav-text">MODULES</span>
+            </a>
+            <a href="#about" class="nav-item" data-tab="about">
+                <span class="nav-code">03//</span>
+                <span class="nav-text">ABOUT US</span>
+            </a>
+            <a href="#shop" class="nav-item" data-tab="shop">
+                <span class="nav-code">04//</span>
+                <span class="nav-text">CYBER LAB</span>
+            </a>
+            <a href="#join" class="nav-item btn-glow" data-tab="join">
+                <span>CONNECT</span>
+            </a>
+        </nav>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+    <!-- Dynamic Main Content Container -->
+    <main class="content-container">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="tab-content active">
+            <div class="hero">
+                <div class="badge-hud">
+                    <span class="blink-dot"></span> QUANTUM PROCESSING UNIT ACTIVE
+                </div>
+                
+                <h1 class="glitch-title" data-text="TRANSCEND REALITY">TRANSCEND REALITY</h1>
+                <p class="subtitle">Next-generation spatial robotics infrastructure powered by decentralized hyper-dimensional neural mesh frameworks.</p>
+                
+                <div class="hero-btns">
+                    <button class="btn btn-cyber glow-cyan" id="audioToggleBtn" data-text="AUDIO SYNTH: ON"><i class="fa-solid fa-volume-high"></i> AUDIO SYNTH: ON</button>
+                    <button class="btn btn-cyber glow-magenta magnetic-btn" data-text="INITIALIZE CLI"><i class="fa-solid fa-terminal"></i> INITIALIZE CLI</button>
+                </div>
+
+                <!-- Live Holographic Core Visualizer -->
+                <div class="holo-display-container">
+                    <div class="holo-header">
+                        <span>LIVE QUANTUM CORE TELEMETRY</span>
+                        <span class="color-cyan">STATUS: OPTIMAL</span>
+                    </div>
+                    <div class="holo-body">
+                        <div class="core-meter-group">
+                            <label>NEURAL LOAD</label>
+                            <div class="meter-bar"><div class="meter-fill fill-cyan" style="width: 78%;"></div></div>
+                        </div>
+                        <div class="core-meter-group">
+                            <label>MEMORY FLUX</label>
+                            <div class="meter-bar"><div class="meter-fill fill-magenta" style="width: 42%;"></div></div>
+                        </div>
+                        <div class="core-meter-group">
+                            <label>DECRYPTION SPEED</label>
+                            <div class="meter-bar"><div class="meter-fill fill-purple" style="width: 91%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULES / PAGES SECTION -->
+        <section id="pages" class="tab-content">
+            <h2 class="section-title text-gradient">SYSTEM MODULE ARCHITECTURE</h2>
+            <div class="card-grid">
+                <div class="futuristic-card tilt-card" data-tilt>
+                    <div class="card-media">
+                        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRQ8VyNGsfESfbsFyqwC-KNezp25LbnoruPbvK5-1mppD8zM6hjVcMNOzK8wUEWh9WE9NjUsBB-VthL3BM" alt="AI Neural Mesh Visual" class="card-img">
+                        <div class="scan-line"></div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-cyan">AI Core</span>
+                        <h3>Neural Mesh v8</h3>
+                        <p>Autonomous cognitive computing arrays with dynamic neural synapses.</p>
+                        <button class="btn-link color-cyan">ACCESS MODULE &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="futuristic-card tilt-card" data-tilt>
+                    <div class="card-media">
+                        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSvSYhiLT-mnoYdsjfGlcXZKCS0crj0MkKkZQ3SWHT2KU2xDTb4trXEjXjBXHxNv7KBO5fsrM-3jDsh0PY" alt="Quantum Cybersecurity Shield" class="card-img">
+                        <div class="scan-line"></div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-magenta">Defense</span>
+                        <h3>Quantum Shield</h3>
+                        <p>Zero-knowledge cryptographic security layers against quantum attacks.</p>
+                        <button class="btn-link color-magenta">ACCESS MODULE &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="futuristic-card tilt-card" data-tilt>
+                    <div class="card-media">
+                        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=871740544969631" alt="Holographic Interface Spatial Computing" class="card-img">
+                        <div class="scan-line"></div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-purple">Spatial</span>
+                        <h3>Holo Render Engine</h3>
+                        <p>Ultra-low latency spatial computing rendering pipeline for WebXR.</p>
+                        <button class="btn-link color-purple">ACCESS MODULE &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section id="about" class="tab-content">
+            <h2 class="section-title text-gradient">ABOUT ROBOTICS COMPANY</h2>
+            
+            <div class="about-hero glass-panel">
+                <div class="about-hero-grid">
+                    <div class="about-text">
+                        <div class="badge-hud">TRI-CORE DIRECTIVE // AQO</div>
+                        <h3>Architecting Next-Gen Cybernetic Intelligence</h3>
+                        <p><strong class="color-cyan">AQO Matrix</strong> at <strong>Robotics Company</strong> represents the synergy of <span class="color-magenta">Asra</span>, <span class="color-cyan">Qaisar</span>, and <span class="color-purple">Owais</span>. Together, we build high-frequency, post-quantum web structures designed to seamlessly interface human consciousness with dynamic cloud neural arrays.</p>
+                        
+                        <!-- Interactive Decipher Terminal -->
+                        <div class="cyber-terminal">
+                            <div class="terminal-bar"><span>AQO_CORE_IDENTITY.SH</span></div>
+                            <div class="terminal-body">
+                                <p class="term-line">&gt; DECRYPTING FOUNDER MATRIX...</p>
+                                <p class="term-line color-magenta">&gt; [A] ASRA :: NEURAL AI STRATEGIST</p>
+                                <p class="term-line color-cyan">&gt; [Q] QAISAR :: LEAD QUANTUM ARCHITECT</p>
+                                <p class="term-line color-purple">&gt; [O] OWAIS :: SPATIAL SYSTEMS ENGINEER</p>
+                                <p class="term-line color-green">&gt; TRIANGLE NODES SYNCED: 100% OPERATIONAL</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image-wrapper">
+                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcT9b-DupEESqN2MJqKhQNq2T04pgPSvLEfU5Dg-veRsU9r9b78MMqWxeuRSFjkvP5rBH8ShusprZz32hmU" alt="Neural Processor Circuitry" class="about-img">
+                        <div class="hologram-grid-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Metrics -->
+            <div class="stats-row">
+                <div class="stat-box glow-cyan">
+                    <h3 class="counter" data-target="99.99">0</h3>%
+                    <p>Uptime Efficiency</p>
+                </div>
+                <div class="stat-box glow-magenta">
+                    <h3 class="counter" data-target="0.02">0</h3>ms
+                    <p>Quantum Latency</p>
+                </div>
+                <div class="stat-box glow-purple">
+                    <h3 class="counter" data-target="15.4">0</h3>M
+                    <p>Active Synapses</p>
+                </div>
+            </div>
+
+            <!-- AQO Founders / Key Architects (1 Girl & 2 Boys) -->
+            <h3 class="sub-title">FOUNDING AQO ARCHITECTS</h3>
+            <div class="team-grid">
+                <!-- Asra (Girl) -->
+                <div class="team-card tilt-card">
+                    <div class="avatar-frame magenta-frame">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Asra Avatar" class="team-avatar-img">
+                    </div>
+                    <h4>Asra</h4>
+                    <span class="role color-magenta">[A] - Neural AI Strategist</span>
+                </div>
+
+                <!-- Qaisar (Boy) -->
+                <div class="team-card tilt-card">
+                    <div class="avatar-frame cyan-frame">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Qaisar Avatar" class="team-avatar-img">
+                    </div>
+                    <h4>Qaisar</h4>
+                    <span class="role color-cyan">[Q] - Lead Quantum Architect</span>
+                </div>
+
+                <!-- Owais (Boy) -->
+                <div class="team-card tilt-card">
+                    <div class="avatar-frame purple-frame">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Owais Avatar" class="team-avatar-img">
+                    </div>
+                    <h4>Owais</h4>
+                    <span class="role color-purple">[O] - Spatial Systems Engineer</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CYBER LAB / SHOP SECTION -->
+        <section id="shop" class="tab-content">
+            <h2 class="section-title text-gradient">CYBERNETIC HARDWARE LAB</h2>
+            <div class="card-grid">
+                <div class="futuristic-card tilt-card">
+                    <div class="card-media">
+                        <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcT9b-DupEESqN2MJqKhQNq2T04pgPSvLEfU5Dg-veRsU9r9b78MMqWxeuRSFjkvP5rBH8ShusprZz32hmU" alt="Neural Link Device" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-magenta">PROTOTYPE</span>
+                        <h3>Neural Link Synapse v2</h3>
+                        <p class="price color-gold">3.50 ETH</p>
+                        <button class="btn btn-cyber glow-magenta full-width" data-text="PURCHASE GEAR">PURCHASE GEAR</button>
+                    </div>
+                </div>
+
+                <div class="futuristic-card tilt-card">
+                    <div class="card-media">
+                        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRg_dhTn1_-mDwXZftJXNC_-1B4vm4KI8Gr1t2RRlkJbg3aGzew87erzTUhVmd9OIAX-AJd8iLhdZypq_4" alt="Holo Glasses" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag tag-cyan">POPULAR</span>
+                        <h3>Holo-Lens Specs v4</h3>
+                        <p class="price color-gold">1.80 ETH</p>
+                        <button class="btn btn-cyber glow-cyan full-width" data-text="PURCHASE GEAR">PURCHASE GEAR</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONNECT / JOIN SECTION -->
+        <section id="join" class="tab-content">
+            <h2 class="section-title text-gradient">ESTABLISH NEURAL LINK</h2>
+            <div class="glass-panel form-container glow-cyber">
+                <form id="joinForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">USER_IDENTIFIER // ALIAS</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">CYBER_ADDRESS // EMAIL</label>
+                    </div>
+                    <button type="submit" class="btn btn-cyber glow-cyan full-width" data-text="TRANSMIT ENCRYPTED DATA">TRANSMIT ENCRYPTED DATA</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Advanced Futuristic Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Robotics Company Logo" class="logo-img">
+                    <span class="logo-text">ROBOTICS<span class="highlight">_COMPANY</span></span>
+                </div>
+                <p>Architecting multi-dimensional robotics solutions powered by the AQO Framework.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <h4 class="color-cyan">DIRECTORIES</h4>
+                <ul>
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#pages" class="footer-link">Modules</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#shop" class="footer-link">Cyber Lab</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-group">
+                <h4 class="color-magenta">SATELLITE SYNC</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-btn cyan-btn"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="social-btn magenta-btn"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-btn purple-btn"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="status-indicator">
+                <span class="dot blink-green"></span> MATRIX SYNC: OPERATIONAL // WEBGL ONLINE
+            </div>
+            <p>&copy; 2026 ROBOTICS COMPANY. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
